@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CBSData.LocalCatalog">
+    <Position X="6.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAgQAAAAQAAAAAAAAYAAAAAEAAAAABA=</HashCode>
+      <FileName>LocalCatalog.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DB" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Tables" />
+      <Property Name="Themes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CBSData.LocalCatalogTable">
+    <Position X="4.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LocalCatalogTable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TableManeger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CBSData.LocalCatalogTableTheme" Collapsed="true">
+    <Position X="6.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LocalCatalogTableTheme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBSData.LocalCatalogTheme" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LocalCatalogTheme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBSData.localDBDataSet" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAQAAxAAAAJQBAAAQAABAAgLQBgAAoAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBSData.TableData">
+    <Position X="7.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>TableData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBSData.TableManager">
+    <Position X="5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAACoAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TableManeger.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LocalCatalogTable" />
+      <Property Name="TableData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CBSData.localDBDataSetTableAdapters.Table_ThemeTableAdapter" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBSData.localDBDataSetTableAdapters.ThemeTableAdapter" Collapsed="true">
+    <Position X="13" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBSData.localDBDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABAFJAAAAMAggAAACgAAAAASAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBSData.OdataCatalog.Catalog" Collapsed="true">
+    <Position X="11.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAgAAAAAAAAAAAQAAAAUgEACAAAAQAAiClIAEAQAAA=</HashCode>
+      <FileName>Service References\OdataCatalog\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBSData.OdataCatalog.Table" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEiAAAAAmkEBgEAUrBUFCCQYgIEAgwAgAZlARQaGgAI=</HashCode>
+      <FileName>Service References\OdataCatalog\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CBSData.OdataCatalog.Theme" Collapsed="true">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAQAAAAAgEAAIEAFABAAgIAAAAAAABAABAAEAAA=</HashCode>
+      <FileName>Service References\OdataCatalog\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CBSData.OdataCatalog.Table_Theme" Collapsed="true">
+    <Position X="7" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAFAQAAAgAAAIEAEAAAAgAAEAAIAABAAAAANBAA=</HashCode>
+      <FileName>Service References\OdataCatalog\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CBSData.DataBase">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>DataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
