@@ -8,6 +8,8 @@ namespace CBSData
 {
     public class LocalCatalogTable : OdataCatalog.Table
     {
+        private localDBDataSet.TableRow x;
+
         public TableManager TableManeger
         {
             get
@@ -35,6 +37,21 @@ namespace CBSData
             this.Frequency = old.Frequency;
             this.DefaultSettings = old.DefaultSettings;
             this.DefaultSelection = old.DefaultSelection;
+        }
+
+        public LocalCatalogTable(localDBDataSet.TableRow old)
+        {
+            this.ID = old.ID;
+            this.Identifier = old.identifier;
+            this.Title = old.title;
+            this.ShortTitle = old.shorttitle;
+            this.Summary = old.summary;
+            this.Modified = old.modified;
+            this.ReasonDelivery = old.reasondelivery;
+            this.Language = old.language;
+            this.Frequency = old.Frequency;
+            this.DefaultSettings = old.defaultsettings;
+            this.DefaultSelection = old.defaultselection;
         }
 
         public void GetThemes()
@@ -67,5 +84,13 @@ namespace CBSData
 
             return rtw;
         }
+
+        #region override
+        public override string ToString()
+        {
+            return this.Title;
+        }
+
+        #endregion
     }
 }

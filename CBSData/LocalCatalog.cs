@@ -35,10 +35,8 @@ namespace CBSData
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
+                localDBDataSetTableAdapters.TableTableAdapter t = new localDBDataSetTableAdapters.TableTableAdapter();
+                return t.GetData().Select(x => new LocalCatalogTable(x)).ToList();
             }
         }
 
