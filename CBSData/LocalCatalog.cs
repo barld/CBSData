@@ -9,6 +9,12 @@ namespace CBSData
 {
     public class LocalCatalog
     {
+
+        #region private fields 
+        private DataBase _db = new DataBase();
+
+        #endregion
+
         public int CountTables
         {
             get
@@ -40,14 +46,15 @@ namespace CBSData
             }
         }
 
+        /// <summary>
+        /// geeft alle thema's uit de database terug
+        /// </summary>
         public List<LocalCatalogTheme> Themes
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
+                localDBDataSetTableAdapters.ThemeTableAdapter t = new localDBDataSetTableAdapters.ThemeTableAdapter();
+                return t.GetData().Select(x => new LocalCatalogTheme(x)).ToList();
             }
         }
 
@@ -55,10 +62,7 @@ namespace CBSData
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
+                return this._db;
             }
         }
 
@@ -200,6 +204,90 @@ namespace CBSData
         public System.Collections.Generic.List<LocalCatalogTable> GetTablesWhereOr()
         {
             throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// return een array aan items op basis van een like op de title
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public LocalCatalogTable[] GetTablesWhere(string searchTable, string searchTheme)
+        {
+            string sql = @"
+select [Table].*, [Theme].Title from [Table]
+	INNER JOIN [Table_Theme] ON [Table_Theme].TableID=[Table].ID
+	INNER JOIN [Theme] on [Table_Theme].ThemeID = [Theme].ID
+WHERE 
+	[Table].title LIKE @searchTable
+	AND [Theme].Title LIKE @searchTheme
+";
+            Dictionary<string,string> vars = new Dictionary<string,string>();
+            vars.Add("@searchTable", "%"+searchTable+"%");
+            vars.Add("@searchTheme", "%" + searchTheme + "%");
+            var result = this.DB.Select(sql, vars);
+
+            //cast de resultaten naar LocalCatalogTable objects
+            LocalCatalogTable[] rtw = new LocalCatalogTable[result.Count];
+
+            int i = 0;
+            foreach (Dictionary<string, object> row in result)
+            {
+                LocalCatalogTable table = new LocalCatalogTable();
+
+                table.ID = Convert.ToInt32(row["ID"]);
+                table.Identifier = row["identifier"] as string;
+                table.Title = row["title"] as string;
+                table.ShortTitle = row["shorttitle"] as string;
+                table.Summary = row["summary"] as string;
+                table.Modified = row["modified"] as DateTime?;
+                table.ReasonDelivery = row["reasondelivery"] as string;
+                table.Language = row["language"] as string;
+                table.Period = row["period"] as string;
+                table.SummaryAndLinks = row["summaryandlinks"] as string;
+                table.DefaultSettings = row["defaultsettings"] as string;
+                table.Frequency = row["Frequency"] as string;
+
+                rtw[i] = table;
+                i++;
+            }
+
+            
+
+            return rtw;
+        }
+
+        /// <summary>
+        /// geeft de reultaten aan thema's terug op basis van een searchquery in de mdf file
+        /// </summary>
+        /// <param name="searchTheme"></param>
+        /// <returns></returns>
+        public LocalCatalogTheme[] GetThemsWhere(string searchTheme)
+        {
+            string sql = @"
+select * from [Theme]
+WHERE 
+	[Theme].Title LIKE @searchTheme
+";
+            Dictionary<string, string> vars = new Dictionary<string, string>();
+            vars.Add("@searchTheme", "%"+searchTheme+"%");
+
+            var result = this._db.Select(sql, vars);
+
+            LocalCatalogTheme[] rtw = new LocalCatalogTheme[result.Count];
+            int i = 0;
+            foreach (Dictionary<string,object> row in result)
+            {
+                LocalCatalogTheme temp = new LocalCatalogTheme();
+                temp.ID = Convert.ToInt32(row["ID"]);
+                temp.Number = row["Number"] as string;
+                temp.Title = row["Title"] as string;
+
+                rtw[i] = temp;
+                i++;
+            }
+
+            return rtw;
+
         }
     }
 }

@@ -9,15 +9,16 @@ namespace CBSData
     public class LocalCatalogTable : OdataCatalog.Table
     {
         private localDBDataSet.TableRow x;
+        private TableManager _tableManeger;
+
 
         public TableManager TableManeger
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
+                if(this._tableManeger==null)
+                    this._tableManeger = new TableManager(string.Format("http://opendata.cbs.nl/OData3StatlineBulkService/{0}/TypedDataSet?$top=100", this.Identifier.Replace(" ", "")));
+                return this._tableManeger;
             }
         }
     
@@ -37,6 +38,8 @@ namespace CBSData
             this.Frequency = old.Frequency;
             this.DefaultSettings = old.DefaultSettings;
             this.DefaultSelection = old.DefaultSelection;
+            this.initial();
+
         }
 
         public LocalCatalogTable(localDBDataSet.TableRow old)
@@ -52,6 +55,18 @@ namespace CBSData
             this.Frequency = old.Frequency;
             this.DefaultSettings = old.defaultsettings;
             this.DefaultSelection = old.defaultselection;
+            this.initial();
+
+        }
+
+        public LocalCatalogTable()
+        {
+            this.initial();
+        }
+
+        private void initial()
+        {
+            //this._tableManeger = ;//er komenen wel eens spaties in voor die worden hier verwijdert
         }
 
         public void GetThemes()

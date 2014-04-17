@@ -34,16 +34,33 @@ namespace CBSData
             }
         }
 
-        public SqlDataReader Select(string query, Dictionary<string, string> vars)
+        public List<Dictionary<string, object>> Select(string query, Dictionary<string, string> vars)
         {
             SqlCommand cmd = this._connection.CreateCommand();
 
             cmd.CommandText = query;
             foreach(var binding in vars)
             {
+                cmd.Parameters.Add(binding.Key, System.Data.SqlDbType.NChar);
                 cmd.Parameters[binding.Key].Value = binding.Value;
             }
-            return cmd.ExecuteReader();
+            var reader = cmd.ExecuteReader();
+
+            List<Dictionary<string, object>> results = new List<Dictionary<string, object>>();
+
+            while(reader.Read())
+            {
+                Dictionary<string, object> result = new Dictionary<string, object>();
+                for(int i=0;i<reader.FieldCount;i++)
+                {
+                    result.Add(reader.GetName(i), reader.GetValue(i));
+                }
+                results.Add(result);                
+            }
+
+            reader.Close();
+
+            return results;
         }
 
         public void Insert(string query, Dictionary<string, string> vars)
