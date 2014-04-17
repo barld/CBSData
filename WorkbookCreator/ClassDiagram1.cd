@@ -13,7 +13,7 @@
   <Class Name="WorkbookCreator.Sheet">
     <Position X="3.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAACAAIAAAAAAAAAAAAUAAAAAABACAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAACAAQAAAAAAAAAAAAQAEAAAABACAAAAAAAAAAA=</HashCode>
       <FileName>Sheet.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -28,12 +28,19 @@
       <FileName>Globals.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Struct Name="WorkbookCreator.ExcelPosition">
-    <Position X="0.75" Y="3" Width="1.5" />
+  <Class Name="WorkbookCreator.TableData">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>TableData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkbookCreator.ExcelPosition" Collapsed="true">
+    <Position X="7" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>ExcelPosition.cs</FileName>
     </TypeIdentifier>
-  </Struct>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

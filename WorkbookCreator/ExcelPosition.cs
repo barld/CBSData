@@ -5,28 +5,18 @@ using System.Text;
 
 namespace WorkbookCreator
 {
-    public struct ExcelPosition
+    public class ExcelPosition
     {
         public int X
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public int Y
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
     }
 }

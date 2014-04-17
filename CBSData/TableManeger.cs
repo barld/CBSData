@@ -69,7 +69,7 @@ namespace CBSData
                 List<string> header = new List<string>();
                 foreach(XmlElement node1 in nodes.Item(0))
                 {
-                    header.Add( node1.Name);
+                    header.Add(node1.Name.Remove(0,2));
                 }
 
                 List<List<object>> rows = new List<List<object>>();

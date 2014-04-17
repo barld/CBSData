@@ -7,14 +7,13 @@ namespace WorkbookCreator
 {
     internal static class Globals
     {
+        private static LogBB.Log _log = new LogBB.Log("Workbook");
+
         public static LogBB.Log Log
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
+                return Globals._log;
             }
         }
     }

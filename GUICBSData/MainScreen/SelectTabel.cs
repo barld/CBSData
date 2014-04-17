@@ -83,6 +83,12 @@ namespace GUICBSData.MainScreen
                 TableManager maneger = t.TableManeger;
                 //zorg eerst dat de data beschikbaar is.
                 maneger.GetAllData();
+
+                //start Excelapplicatie
+                WorkbookCreator.Workbook wb = new WorkbookCreator.Workbook();
+                var sheet = wb.GetSheet("getallen", maneger.TableData.HeaderData, maneger.TableData.RowData);
+
+                wb.Vissable = true;
             }
         }
     }
