@@ -37,12 +37,12 @@
             this.SearchTheme = new System.Windows.Forms.TextBox();
             this.LocationTable = new System.Windows.Forms.LinkLabel();
             this.GetData = new System.Windows.Forms.Button();
+            this.InfoButton = new System.Windows.Forms.Button();
             this.Info.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabelsList
             // 
-            this.TabelsList.CheckOnClick = true;
             this.TabelsList.FormattingEnabled = true;
             this.TabelsList.Location = new System.Drawing.Point(51, 77);
             this.TabelsList.Name = "TabelsList";
@@ -52,7 +52,6 @@
             // 
             // ThemesList
             // 
-            this.ThemesList.CheckOnClick = true;
             this.ThemesList.FormattingEnabled = true;
             this.ThemesList.Location = new System.Drawing.Point(448, 77);
             this.ThemesList.Name = "ThemesList";
@@ -128,10 +127,21 @@
             this.GetData.UseVisualStyleBackColor = true;
             this.GetData.Click += new System.EventHandler(this.GetData_Click);
             // 
+            // InfoButton
+            // 
+            this.InfoButton.Location = new System.Drawing.Point(739, 77);
+            this.InfoButton.Name = "InfoButton";
+            this.InfoButton.Size = new System.Drawing.Size(184, 23);
+            this.InfoButton.TabIndex = 7;
+            this.InfoButton.Text = "Get info";
+            this.InfoButton.UseVisualStyleBackColor = true;
+            this.InfoButton.Click += new System.EventHandler(this.InfoButton_Click);
+            // 
             // SelectTabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.InfoButton);
             this.Controls.Add(this.GetData);
             this.Controls.Add(this.LocationTable);
             this.Controls.Add(this.SearchTheme);
@@ -150,8 +160,6 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox TabelsList;
-        private System.Windows.Forms.CheckedListBox ThemesList;
         private System.Windows.Forms.Panel Info;
         private System.Windows.Forms.Label Summary;
         private System.Windows.Forms.Label Title;
@@ -159,5 +167,8 @@
         private System.Windows.Forms.TextBox SearchTheme;
         private System.Windows.Forms.LinkLabel LocationTable;
         private System.Windows.Forms.Button GetData;
+        private System.Windows.Forms.Button InfoButton;
+        private System.Windows.Forms.CheckedListBox TabelsList;
+        private System.Windows.Forms.CheckedListBox ThemesList;
     }
 }

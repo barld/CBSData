@@ -91,5 +91,14 @@ namespace GUICBSData.MainScreen
                 wb.Vissable = true;
             }
         }
+
+        private void InfoButton_Click(object sender, EventArgs e)
+        {
+             var t = this.TabelsList.SelectedItem as LocalCatalogTable;
+
+             if (t != null)
+             {
+                 Globals.MainWindow.SetInfoWait(new SelectTableInformationWait(t));
+             }        }
     }
 }

@@ -19,6 +19,8 @@ namespace GUICBSData
         #region Screens
         private Home _home = new Home();
         private SelectTabel _selectTabel;
+        private SelectTabelInformation _tableInfo;
+        private SelectTableInformationWait _selectTableInformationWait;
         #endregion
 
         #endregion
@@ -51,7 +53,30 @@ namespace GUICBSData
             this._selectTabel = new SelectTabel();
             this._selectTabel.Dock = DockStyle.Fill;
             this.Controls.Remove(this._home);
+            this.Controls.Remove(this._selectTableInformationWait);
+            this.Controls.Remove(this._tableInfo);
             this.Controls.Add(this._selectTabel);            
+        }
+
+        internal void SetInfoScreen(List<string> list)
+        {
+            this._tableInfo = new SelectTabelInformation(list);
+            this._tableInfo.Dock = DockStyle.Fill;
+            this.Controls.Remove(this._home);
+            this.Controls.Remove(this._selectTabel);
+            this.Controls.Remove(this._selectTableInformationWait);
+            this.Controls.Add(this._tableInfo);
+        }
+
+        internal void SetInfoWait(SelectTableInformationWait selectTableInformationWait)
+        {
+            this._selectTableInformationWait = selectTableInformationWait;
+            this._selectTableInformationWait.Dock = DockStyle.Fill;
+            this.Controls.Remove(this._home);
+            this.Controls.Remove(this._selectTabel);
+            this.Controls.Remove(this._tableInfo);
+            this.Controls.Add(this._selectTableInformationWait);
+
         }
     }
 }

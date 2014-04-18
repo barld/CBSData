@@ -38,6 +38,8 @@
     <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Data.Services.Client, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +50,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.cs">
@@ -69,6 +72,18 @@
     <Compile Include="MainScreen\SelectTabel.Designer.cs">
       <DependentUpon>SelectTabel.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainScreen\SelectTabelInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainScreen\SelectTabelInformation.Designer.cs">
+      <DependentUpon>SelectTabelInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen\SelectTableInformationWait.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainScreen\SelectTableInformationWait.Designer.cs">
+      <DependentUpon>SelectTableInformationWait.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +101,12 @@
     <EmbeddedResource Include="MainScreen\SelectTabel.resx">
       <DependentUpon>SelectTabel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen\SelectTabelInformation.resx">
+      <DependentUpon>SelectTabelInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen\SelectTableInformationWait.resx">
+      <DependentUpon>SelectTableInformationWait.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +118,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -120,6 +142,9 @@
       <Project>{7bba9d13-d65c-4eab-b7d0-b83817754909}</Project>
       <Name>WorkbookCreator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MainScreen\waiting_animation_512x512_by_clopen-d39yzl8.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

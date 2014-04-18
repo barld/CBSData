@@ -28,6 +28,30 @@ namespace CBSData
             set;
         }
 
+        public List<string> GetDataProperties()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(this.URL + "DataProperties/");
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
+            // de standaard namespace
+            nsmgr.AddNamespace("x", "http://www.w3.org/2005/Atom");
+            nsmgr.AddNamespace("m", "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata");
+            nsmgr.AddNamespace("d", "http://schemas.microsoft.com/ado/2007/08/dataservices");
+
+            var nodes = doc.SelectNodes("//x:entry/x:content/m:properties/d:Key", nsmgr);
+
+            List<string> rtw = new List<string>();
+
+            foreach (XmlNode node in nodes)
+            {
+                rtw.Add(node.InnerText);
+            }
+
+            return rtw;
+
+
+        }
+
         public LocalCatalogTable LocalCatalogTable
         {
             get
@@ -55,7 +79,7 @@ namespace CBSData
             int aantal = document.XPathSelectElements("/feed/entry").Count();*/
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(this.URL);
+            doc.Load(this.URL+"TypedDataSet?$top=100");
             XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
             // de standaard namespace
             nsmgr.AddNamespace("x", "http://www.w3.org/2005/Atom");

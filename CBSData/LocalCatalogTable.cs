@@ -17,7 +17,7 @@ namespace CBSData
             get
             {
                 if(this._tableManeger==null)
-                    this._tableManeger = new TableManager(string.Format("http://opendata.cbs.nl/OData3StatlineBulkService/{0}/TypedDataSet?$top=100", this.Identifier.Replace(" ", "")));
+                    this._tableManeger = new TableManager(string.Format("http://opendata.cbs.nl/OData3StatlineBulkService/{0}/", this.Identifier.Replace(" ", "")));
                 return this._tableManeger;
             }
         }
