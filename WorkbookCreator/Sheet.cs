@@ -29,7 +29,38 @@ namespace WorkbookCreator
         //eigenlijk de belangerijkste methode hier is waar het gebeurt
         private void _createSheet()
         {
+            //http://www.clear-lines.com/blog/post/Write-data-to-an-Excel-worksheet-with-C-fast.aspx gevonden hoe je snel naar excel kan schrijven
             this.sheet.Name = this.Name;
+
+            int rows = this.Data.Count+1;
+            int columns = this.HeaderColomns.Count;
+            var data = new object[rows, columns];
+
+            int colum = 0;
+            //write header
+            foreach (string columnName in this.HeaderColomns)
+            {
+                data[0,colum] = columnName;
+                colum++;
+            }
+            
+            for (var row = 2; row <= rows; row++)
+            {
+                for (var column = 1; column <= columns; column++)
+                {
+                    data[row - 1, column - 1] = this.Data[row-2][column-1];
+                }
+            }
+
+            var startCell = this.sheet.Cells[1, 1];
+            var endCell = this.sheet.Cells[rows, columns];
+            Excel.Range writeRange = this.sheet.Range[startCell, endCell];
+
+            writeRange.Value2 = data;
+            writeRange.Columns.AutoFit();
+
+            /*
+             * oude zelf geschreven performde niet goed genoeg omdat je hier per cell gaat weg schrijven bovenstaande code doet dit niet
             
             //loop door de header data heen en zet die in sheet 
             foreach (string columnName in this.HeaderColomns)
@@ -57,7 +88,7 @@ namespace WorkbookCreator
             string a = this.sheet.UsedRange.Address;
             this.sheet.Range[a].Columns.AutoFit();
             
-            
+            */
                 
 
 
