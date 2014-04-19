@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase.cs" />
+    <Compile Include="DataCriteria.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="LocalCatalog.cs" />
     <Compile Include="LocalCatalogTable.cs" />

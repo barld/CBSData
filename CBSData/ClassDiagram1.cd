@@ -3,7 +3,7 @@
   <Class Name="CBSData.LocalCatalog">
     <Position X="6.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAgQAAAAQAAAAAAAAYAAAAAEAAAAABA=</HashCode>
+      <HashCode>AAAAgAAAAAQAAAgQABAAQAEAAAAAAYAAABAEAAAAAFA=</HashCode>
       <FileName>LocalCatalog.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -17,7 +17,7 @@
   <Class Name="CBSData.LocalCatalogTable">
     <Position X="4.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AACAAAAAABAAAAAEAAIAAAAACAAEAAAAAABAAAAAAAA=</HashCode>
       <FileName>LocalCatalogTable.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -27,14 +27,14 @@
   <Class Name="CBSData.LocalCatalogTableTheme" Collapsed="true">
     <Position X="6.75" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAABAAAAAAAA=</HashCode>
       <FileName>LocalCatalogTableTheme.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CBSData.LocalCatalogTheme" Collapsed="true">
     <Position X="9.25" Y="4" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AEAAAAAAAAAAAAAEAAAAAAAAAAAAAACAAABAAAAAAAA=</HashCode>
       <FileName>LocalCatalogTheme.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -52,9 +52,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CBSData.TableManager">
-    <Position X="5" Y="6.75" Width="1.5" />
+    <Position X="5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAACoAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAACoAAAAgAAAAAAAAAAA=</HashCode>
       <FileName>TableManeger.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -114,8 +114,15 @@
   <Class Name="CBSData.DataBase">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAEAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <HashCode>AAQAAEAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAQAAABAA=</HashCode>
       <FileName>DataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBSData.DataCriteria">
+    <Position X="1" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAQAAAAAAABgAAAAAQAAAAAA=</HashCode>
+      <FileName>DataCriteria.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

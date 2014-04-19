@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
@@ -52,6 +54,18 @@ namespace CBSData
 
         }
 
+        public int CountRows()
+        {
+            string link = this.URL + "TypedDataSet/$count";
+
+            WebClient client = new WebClient();
+            Stream stream = client.OpenRead(link);
+            StreamReader reader = new StreamReader(stream);
+            String content = reader.ReadToEnd();
+
+            return Convert.ToInt32( content);
+        }
+
         public LocalCatalogTable LocalCatalogTable
         {
             get
@@ -69,7 +83,7 @@ namespace CBSData
             private set;
         }
     
-        public void GetAllData()
+        public void GetAllData(DataCriteria criteria)
         {
             /*var document = XDocument.Load(this.URL);
 
@@ -79,7 +93,7 @@ namespace CBSData
             int aantal = document.XPathSelectElements("/feed/entry").Count();*/
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(this.URL+"TypedDataSet?$top=100");
+            doc.Load(this.URL+"TypedDataSet/"+criteria.Query);
             XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
             // de standaard namespace
             nsmgr.AddNamespace("x", "http://www.w3.org/2005/Atom");

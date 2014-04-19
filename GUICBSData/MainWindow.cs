@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUICBSData.MainScreen;
+using CBSData;
 
 namespace GUICBSData
 {
@@ -58,9 +59,9 @@ namespace GUICBSData
             this.Controls.Add(this._selectTabel);            
         }
 
-        internal void SetInfoScreen(List<string> list)
+        internal void SetInfoScreen(DataCriteria data, LocalCatalogTable table)
         {
-            this._tableInfo = new SelectTabelInformation(list);
+            this._tableInfo = new SelectTabelInformation(data, table);
             this._tableInfo.Dock = DockStyle.Fill;
             this.Controls.Remove(this._home);
             this.Controls.Remove(this._selectTabel);
@@ -76,7 +77,31 @@ namespace GUICBSData
             this.Controls.Remove(this._selectTabel);
             this.Controls.Remove(this._tableInfo);
             this.Controls.Add(this._selectTableInformationWait);
+        }
 
+        /// <summary>
+        /// ga terug naar home
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Controls.Remove(this._selectTableInformationWait);
+            this.Controls.Remove(this._selectTabel);
+            this.Controls.Remove(this._tableInfo);
+
+            this.Controls.Add(this._home);
+        }
+
+        private void selectTabelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Controls.Remove(this._selectTableInformationWait);
+            this.Controls.Remove(this._home);
+            this.Controls.Remove(this._tableInfo);
+
+            this._selectTabel = new SelectTabel();
+
+            this.Controls.Add(this._selectTabel);
         }
     }
 }

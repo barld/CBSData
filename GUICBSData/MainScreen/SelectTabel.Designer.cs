@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TabelsList = new System.Windows.Forms.CheckedListBox();
-            this.ThemesList = new System.Windows.Forms.CheckedListBox();
+            this.TabelsList = new System.Windows.Forms.ListBox();
+            this.ThemesList = new System.Windows.Forms.ListBox();
             this.Info = new System.Windows.Forms.Panel();
             this.Summary = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.SearchTabel = new System.Windows.Forms.TextBox();
             this.SearchTheme = new System.Windows.Forms.TextBox();
             this.LocationTable = new System.Windows.Forms.LinkLabel();
-            this.GetData = new System.Windows.Forms.Button();
             this.InfoButton = new System.Windows.Forms.Button();
             this.Info.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +45,7 @@
             this.TabelsList.FormattingEnabled = true;
             this.TabelsList.Location = new System.Drawing.Point(51, 77);
             this.TabelsList.Name = "TabelsList";
-            this.TabelsList.Size = new System.Drawing.Size(252, 244);
+            this.TabelsList.Size = new System.Drawing.Size(252, 238);
             this.TabelsList.TabIndex = 0;
             this.TabelsList.SelectedIndexChanged += new System.EventHandler(this.TabelsList_SelectedIndexChanged);
             // 
@@ -55,7 +54,7 @@
             this.ThemesList.FormattingEnabled = true;
             this.ThemesList.Location = new System.Drawing.Point(448, 77);
             this.ThemesList.Name = "ThemesList";
-            this.ThemesList.Size = new System.Drawing.Size(188, 244);
+            this.ThemesList.Size = new System.Drawing.Size(188, 238);
             this.ThemesList.TabIndex = 1;
             // 
             // Info
@@ -117,16 +116,6 @@
             this.LocationTable.Text = "Location";
             this.LocationTable.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LocationTable_LinkClicked);
             // 
-            // GetData
-            // 
-            this.GetData.Location = new System.Drawing.Point(739, 32);
-            this.GetData.Name = "GetData";
-            this.GetData.Size = new System.Drawing.Size(184, 23);
-            this.GetData.TabIndex = 6;
-            this.GetData.Text = "Get Data";
-            this.GetData.UseVisualStyleBackColor = true;
-            this.GetData.Click += new System.EventHandler(this.GetData_Click);
-            // 
             // InfoButton
             // 
             this.InfoButton.Location = new System.Drawing.Point(739, 77);
@@ -142,7 +131,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.InfoButton);
-            this.Controls.Add(this.GetData);
             this.Controls.Add(this.LocationTable);
             this.Controls.Add(this.SearchTheme);
             this.Controls.Add(this.SearchTabel);
@@ -166,9 +154,8 @@
         private System.Windows.Forms.TextBox SearchTabel;
         private System.Windows.Forms.TextBox SearchTheme;
         private System.Windows.Forms.LinkLabel LocationTable;
-        private System.Windows.Forms.Button GetData;
+        private System.Windows.Forms.ListBox TabelsList;
+        private System.Windows.Forms.ListBox ThemesList;
         private System.Windows.Forms.Button InfoButton;
-        private System.Windows.Forms.CheckedListBox TabelsList;
-        private System.Windows.Forms.CheckedListBox ThemesList;
     }
 }

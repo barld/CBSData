@@ -8,17 +8,78 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CBSData;
+
 namespace GUICBSData.MainScreen
 {
     public partial class SelectTabelInformation : UserControl
     {
+        private LocalCatalogTable _table;
 
-        public SelectTabelInformation(List<string> list)
+        public SelectTabelInformation(DataCriteria data, LocalCatalogTable table )
         {
             InitializeComponent();
 
-            this.CatogoriesList.Items.AddRange(list.ToArray());
+
+            this._table = table;
+            this.CatogoriesList.Items.AddRange(data.Select.ToArray());
+
+            //trackbar
+            this.LimitTo.Text = data.Limit.ToString();
+            this.trackBar1.Maximum = data.Limit;
+            this.trackBar1.Minimum = 1;
+
+            if (data.Limit > 500)
+                this.trackBar1.Value = 500;
         }
 
+        private void GetData_Click(object sender, EventArgs e)
+        {
+
+            var t = this._table;
+
+            if(t!=null && !this.DataTransfer.IsBusy)
+            {
+                var AllData = new { T = t, limit = trackBar1.Value, select = this.CatogoriesList };
+                this.DataTransfer.RunWorkerAsync(AllData);
+            }
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            this.limit.Text = this.trackBar1.Value.ToString();
+        }
+
+        private void DataTransfer_DoWork(object sender, DoWorkEventArgs e)
+        {
+            MessageBox.Show("De data wordt opgehaald en naar Excel geschreven dit kan even duren afhankelijk van de hoeveelheid data");
+            dynamic argument = e.Argument;
+
+            TableManager maneger = argument.T.TableManeger as TableManager;
+            //zorg eerst dat de data beschikbaar is.
+
+            DataCriteria criteria = new DataCriteria();
+            criteria.Limit = argument.limit;
+            if (argument.select.CheckedItems.Count > 0)
+            {
+                List<string> select = new List<string>();
+                foreach (string val in argument.select.CheckedItems)
+                {
+                    select.Add(val);
+                }
+                criteria.Select = select;
+            }
+
+
+
+
+            maneger.GetAllData(criteria);
+
+            //start Excelapplicatie
+            WorkbookCreator.Workbook wb = new WorkbookCreator.Workbook();
+            var sheet = wb.GetSheet("getallen", maneger.TableData.HeaderData, maneger.TableData.RowData);
+
+            wb.Vissable = true;
+        }        
     }
 }

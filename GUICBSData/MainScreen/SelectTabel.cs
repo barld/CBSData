@@ -74,23 +74,7 @@ namespace GUICBSData.MainScreen
                 System.Diagnostics.Process.Start("http://opendata.cbs.nl/OData3StatlineBulkService/" + t.Identifier.Replace(" ", "") );//er komenen wel eens spaties in voor die worden hier verwijdert
         }
 
-        private void GetData_Click(object sender, EventArgs e)
-        {
-            var t = this.TabelsList.SelectedItem as LocalCatalogTable;
-
-            if(t!=null)
-            {
-                TableManager maneger = t.TableManeger;
-                //zorg eerst dat de data beschikbaar is.
-                maneger.GetAllData();
-
-                //start Excelapplicatie
-                WorkbookCreator.Workbook wb = new WorkbookCreator.Workbook();
-                var sheet = wb.GetSheet("getallen", maneger.TableData.HeaderData, maneger.TableData.RowData);
-
-                wb.Vissable = true;
-            }
-        }
+        
 
         private void InfoButton_Click(object sender, EventArgs e)
         {
