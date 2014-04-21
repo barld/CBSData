@@ -16,6 +16,8 @@ namespace GUICBSData
         {
             Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
+            /*if (Globals.MainWindow == null)
+                Globals.MainWindow = new MainWindow();*/
             Application.Run(Globals.MainWindow);
         }
     }

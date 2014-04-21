@@ -30,8 +30,8 @@ namespace GUICBSData
         {
             InitializeComponent();
 
-            this.Controls.Add(this._home);
-            this.Controls[this.Controls.Count - 1].Dock = DockStyle.Fill;
+            this.splitContainer1.Panel1.Controls.Add(this._home);
+            this.splitContainer1.Panel1.Controls[this.splitContainer1.Panel1.Controls.Count - 1].Dock = DockStyle.Fill;
         }
 
         /// <summary>
@@ -53,30 +53,30 @@ namespace GUICBSData
         {
             this._selectTabel = new SelectTabel();
             this._selectTabel.Dock = DockStyle.Fill;
-            this.Controls.Remove(this._home);
-            this.Controls.Remove(this._selectTableInformationWait);
-            this.Controls.Remove(this._tableInfo);
-            this.Controls.Add(this._selectTabel);            
+            this.splitContainer1.Panel1.Controls.Remove(this._home);
+            this.splitContainer1.Panel1.Controls.Remove(this._selectTableInformationWait);
+            this.splitContainer1.Panel1.Controls.Remove(this._tableInfo);
+            this.splitContainer1.Panel1.Controls.Add(this._selectTabel);            
         }
 
         internal void SetInfoScreen(DataCriteria data, LocalCatalogTable table)
         {
             this._tableInfo = new SelectTabelInformation(data, table);
             this._tableInfo.Dock = DockStyle.Fill;
-            this.Controls.Remove(this._home);
-            this.Controls.Remove(this._selectTabel);
-            this.Controls.Remove(this._selectTableInformationWait);
-            this.Controls.Add(this._tableInfo);
+            this.splitContainer1.Panel1.Controls.Remove(this._home);
+            this.splitContainer1.Panel1.Controls.Remove(this._selectTabel);
+            this.splitContainer1.Panel1.Controls.Remove(this._selectTableInformationWait);
+            this.splitContainer1.Panel1.Controls.Add(this._tableInfo);
         }
 
         internal void SetInfoWait(SelectTableInformationWait selectTableInformationWait)
         {
             this._selectTableInformationWait = selectTableInformationWait;
             this._selectTableInformationWait.Dock = DockStyle.Fill;
-            this.Controls.Remove(this._home);
-            this.Controls.Remove(this._selectTabel);
-            this.Controls.Remove(this._tableInfo);
-            this.Controls.Add(this._selectTableInformationWait);
+            this.splitContainer1.Panel1.Controls.Remove(this._home);
+            this.splitContainer1.Panel1.Controls.Remove(this._selectTabel);
+            this.splitContainer1.Panel1.Controls.Remove(this._tableInfo);
+            this.splitContainer1.Panel1.Controls.Add(this._selectTableInformationWait);
         }
 
         /// <summary>
@@ -86,22 +86,32 @@ namespace GUICBSData
         /// <param name="e"></param>
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Controls.Remove(this._selectTableInformationWait);
-            this.Controls.Remove(this._selectTabel);
-            this.Controls.Remove(this._tableInfo);
+            this.splitContainer1.Panel1.Controls.Remove(this._selectTableInformationWait);
+            this.splitContainer1.Panel1.Controls.Remove(this._selectTabel);
+            this.splitContainer1.Panel1.Controls.Remove(this._tableInfo);
 
-            this.Controls.Add(this._home);
+            this.splitContainer1.Panel1.Controls.Add(this._home);
         }
 
         private void selectTabelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Controls.Remove(this._selectTableInformationWait);
-            this.Controls.Remove(this._home);
-            this.Controls.Remove(this._tableInfo);
+            this.splitContainer1.Panel1.Controls.Remove(this._selectTableInformationWait);
+            this.splitContainer1.Panel1.Controls.Remove(this._home);
+            this.splitContainer1.Panel1.Controls.Remove(this._tableInfo);
 
             this._selectTabel = new SelectTabel();
 
-            this.Controls.Add(this._selectTabel);
+            this.splitContainer1.Panel1.Controls.Add(this._selectTabel);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.cbs.nl");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://creativecommons.org/licenses/by/3.0/nl/");
         }
     }
 }
