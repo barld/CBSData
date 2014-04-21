@@ -36,6 +36,7 @@
             this.LimitTo = new System.Windows.Forms.Label();
             this.limit = new System.Windows.Forms.Label();
             this.DataTransfer = new System.ComponentModel.BackgroundWorker();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +54,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(73, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(130, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Catogorie";
+            this.label1.Text = "selecteer de juiste Column";
             // 
             // GetData
             // 
@@ -63,13 +64,13 @@
             this.GetData.Name = "GetData";
             this.GetData.Size = new System.Drawing.Size(184, 23);
             this.GetData.TabIndex = 9;
-            this.GetData.Text = "Get Data";
+            this.GetData.Text = "Get Data in Excel";
             this.GetData.UseVisualStyleBackColor = true;
             this.GetData.Click += new System.EventHandler(this.GetData_Click);
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(76, 345);
+            this.trackBar1.Location = new System.Drawing.Point(76, 361);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(220, 45);
             this.trackBar1.TabIndex = 10;
@@ -78,7 +79,7 @@
             // limitFrom
             // 
             this.limitFrom.AutoSize = true;
-            this.limitFrom.Location = new System.Drawing.Point(35, 345);
+            this.limitFrom.Location = new System.Drawing.Point(35, 361);
             this.limitFrom.Name = "limitFrom";
             this.limitFrom.Size = new System.Drawing.Size(13, 13);
             this.limitFrom.TabIndex = 11;
@@ -87,7 +88,7 @@
             // LimitTo
             // 
             this.LimitTo.AutoSize = true;
-            this.LimitTo.Location = new System.Drawing.Point(303, 345);
+            this.LimitTo.Location = new System.Drawing.Point(303, 361);
             this.LimitTo.Name = "LimitTo";
             this.LimitTo.Size = new System.Drawing.Size(41, 13);
             this.LimitTo.TabIndex = 12;
@@ -96,7 +97,7 @@
             // limit
             // 
             this.limit.AutoSize = true;
-            this.limit.Location = new System.Drawing.Point(175, 314);
+            this.limit.Location = new System.Drawing.Point(175, 330);
             this.limit.Name = "limit";
             this.limit.Size = new System.Drawing.Size(13, 13);
             this.limit.TabIndex = 13;
@@ -106,10 +107,20 @@
             // 
             this.DataTransfer.DoWork += new System.ComponentModel.DoWorkEventHandler(this.DataTransfer_DoWork);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(76, 298);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Aantal rijen";
+            // 
             // SelectTabelInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.limit);
             this.Controls.Add(this.LimitTo);
             this.Controls.Add(this.limitFrom);
@@ -135,5 +146,6 @@
         private System.Windows.Forms.Label LimitTo;
         private System.Windows.Forms.Label limit;
         private System.ComponentModel.BackgroundWorker DataTransfer;
+        private System.Windows.Forms.Label label2;
     }
 }

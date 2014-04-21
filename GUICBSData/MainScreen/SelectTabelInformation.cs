@@ -33,7 +33,16 @@ namespace GUICBSData.MainScreen
             this.trackBar1.Minimum = 1;
 
             if (data.Limit > 500)
+            {
                 this.trackBar1.Value = 500;
+                this.limit.Text = "500";
+            }
+            if(data.Limit>10000)
+            {
+                this.LimitTo.Text = "10000";
+                this.trackBar1.Maximum = 10000;
+            }
+
         }
 
         private void GetData_Click(object sender, EventArgs e)
@@ -81,6 +90,7 @@ namespace GUICBSData.MainScreen
             //start Excelapplicatie
             WorkbookCreator.Workbook wb = new WorkbookCreator.Workbook();
             var sheet = wb.GetSheet("getallen", maneger.TableData.HeaderData, maneger.TableData.RowData);
+            var infoSheet = wb.GetSheet("info", new List<string> {"dscription" }, new List<List<object>> { new List<object> { maneger.GetInfo() } });
 
             wb.Vissable = true;
         }        
