@@ -127,5 +127,83 @@ namespace CBSData
             
             
         }
+
+        /// <summary>
+        /// haalt de beschrijving op die bij een tabel zit
+        /// </summary>
+        /// <returns></returns>
+        public string GetInfo()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(this.URL + "TableInfos/" );
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
+            // de standaard namespace
+            nsmgr.AddNamespace("x", "http://www.w3.org/2005/Atom");
+            nsmgr.AddNamespace("m", "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata");
+            nsmgr.AddNamespace("d", "http://schemas.microsoft.com/ado/2007/08/dataservices");
+
+
+            return doc.SelectSingleNode("//m:properties/d:Description", nsmgr).InnerText;            
+        }
+
+        /// <summary>
+        /// haal de extra tabellen met data binnen
+        /// </summary>
+        /// <returns></returns>
+        public List<TableData> GetExtraData(DataCriteria criteria)
+        {
+            List<TableData> rtw = new List<TableData>();
+
+            //stap1 = ophalen welke extra tabellen moeten worden opgehaald
+            //alle gegevens starten met een lage streep en bestaan niet als extra tabel
+            foreach (string extraTabel in criteria.Select.Where(x => x[x.Length - 2] != '_')) 
+            {
+                try
+                {
+                    rtw.Add(this._getDataExtraTabel(extraTabel));
+                }
+                catch { }
+            }
+
+            return rtw;
+        }
+
+        private TableData _getDataExtraTabel(string extraTabel)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(this.URL + extraTabel);
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
+            // de standaard namespace
+            nsmgr.AddNamespace("x", "http://www.w3.org/2005/Atom");
+            nsmgr.AddNamespace("m", "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata");
+
+
+            var nodes = doc.DocumentElement.SelectNodes("//x:entry/x:content/m:properties", nsmgr);
+
+            if (nodes.Count > 0)
+            {
+                List<string> header = new List<string>();
+                foreach (XmlElement node1 in nodes.Item(0))
+                {
+                    header.Add(node1.Name.Remove(0, 2));
+                }
+
+                List<List<object>> rows = new List<List<object>>();
+                foreach (XmlNode propertie in nodes)
+                {
+                    List<object> row = new List<object>();
+                    foreach (XmlElement val in propertie)
+                    {
+                        row.Add(val.InnerText);
+                    }
+                    rows.Add(row);
+                }
+
+
+                return new TableData(header, rows);
+            }
+            return null;
+        }
+
     }
 }

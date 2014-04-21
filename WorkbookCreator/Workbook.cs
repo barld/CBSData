@@ -17,7 +17,6 @@ namespace WorkbookCreator
             MyApp = new Excel.Application();
             MyApp.Visible = false;
             MyBook = MyApp.Workbooks.Add(1);
-
         }
 
         public List<Sheet> Sheets
@@ -61,8 +60,8 @@ namespace WorkbookCreator
 
         public Sheet GetSheet(string name, List<string> header, List<List<object>> data)
         {
-            this.MyBook.Sheets.Add();
-            Excel.Worksheet s = this.MyBook.Sheets[this.MyBook.Sheets.Count - 1];
+            this.MyBook.Sheets.Add(System.Type.Missing, this.MyBook.Sheets[this.MyBook.Sheets.Count]);//zorg dat het tablad na de laatste wordt ingevoegd
+            Excel.Worksheet s = this.MyBook.Sheets[this.MyBook.Sheets.Count];
             return new Sheet(name, header, data, new ExcelPosition() { X = 2, Y = 2 }, s);
         }
 

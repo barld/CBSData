@@ -72,18 +72,26 @@ namespace GUICBSData.MainScreen
 
             DataCriteria criteria = new DataCriteria();
             criteria.Limit = argument.limit;
+            List<string> select = new List<string>();
             if (argument.select.CheckedItems.Count > 0)
             {
-                List<string> select = new List<string>();
+
                 foreach (string val in argument.select.CheckedItems)
                 {
                     select.Add(val);
                 }
-                criteria.Select = select;
+
+                
+            }
+            else
+            {
+                foreach (string val in argument.select.Items)
+                {
+                    select.Add(val);
+                }
             }
 
-
-
+            criteria.Select = select;
 
             maneger.GetAllData(criteria);
 
@@ -91,6 +99,13 @@ namespace GUICBSData.MainScreen
             WorkbookCreator.Workbook wb = new WorkbookCreator.Workbook();
             var sheet = wb.GetSheet("getallen", maneger.TableData.HeaderData, maneger.TableData.RowData);
             var infoSheet = wb.GetSheet("info", new List<string> {"dscription" }, new List<List<object>> { new List<object> { maneger.GetInfo() } });
+
+            int i = 0;
+            foreach(TableData tab in maneger.GetExtraData(criteria))
+            {
+                wb.GetSheet(criteria.Select[i], tab.HeaderData, tab.RowData);
+                i++;
+            }
 
             wb.Vissable = true;
         }        

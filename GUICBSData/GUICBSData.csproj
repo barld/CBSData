@@ -95,6 +95,9 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home_SelectTabelButton_Click.sequencediagram.layout">
+      <DependentUpon>Home_SelectTabelButton_Click.sequencediagram</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainScreen\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +123,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Home_SelectTabelButton_Click.sequencediagram" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

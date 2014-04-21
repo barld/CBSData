@@ -15,27 +15,6 @@ namespace CBSData
 
         #endregion
 
-        public int CountTables
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public int CountThemes
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
 
         public List<LocalCatalogTable> Tables
         {
