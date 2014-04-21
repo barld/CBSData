@@ -22,7 +22,10 @@ namespace GUICBSData.MainScreen
 
 
             this._table = table;
-            this.CatogoriesList.Items.AddRange(data.Select.ToArray());
+            this.CatogoriesList.Items.AddRange(data.Select
+                .Where(x=>!string.IsNullOrEmpty(x))//belangerijk dit verwijdert lege items
+                .ToArray()
+                );
 
             //trackbar
             this.LimitTo.Text = data.Limit.ToString();
