@@ -207,8 +207,9 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
-            this.Text = "MainWindow";
+            this.Text = "CBS Data";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

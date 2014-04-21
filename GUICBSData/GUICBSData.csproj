@@ -144,6 +144,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icon.ico" />
     <Content Include="MainScreen\waiting_animation_512x512_by_clopen-d39yzl8.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
