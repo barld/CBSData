@@ -84,5 +84,10 @@ namespace GUICBSData.MainScreen
              {
                  Globals.MainWindow.SetInfoWait(new SelectTableInformationWait(t));
              }        }
+
+        private void ThemesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
