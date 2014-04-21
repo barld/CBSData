@@ -39,10 +39,10 @@
             this.label1.Location = new System.Drawing.Point(18, 30);
             this.label1.MaximumSize = new System.Drawing.Size(200, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 39);
+            this.label1.Size = new System.Drawing.Size(182, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welkom bij dit programma voor het makkelijk selecteeren van data bij het CBS klik" +
-    " hiernaast wat u wilt doen";
+            this.label1.Text = "Welkom bij dit programma voor het makkelijk selecteren van data bij het CBS klik " +
+    "hiernaast wat u wilt doen";
             // 
             // SynchronsizeButton
             // 
