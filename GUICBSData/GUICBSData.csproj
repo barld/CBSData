@@ -112,6 +112,7 @@
     <Compile Include="MainScreen\SelectTableInformationWait.Designer.cs">
       <DependentUpon>SelectTableInformationWait.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainScreen\SelectValue.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

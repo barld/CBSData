@@ -24,6 +24,7 @@ namespace GUICBSData.MainScreen
             this._table = table;
             this.CatogoriesList.Items.AddRange(data.Select
                 .Where(x=>!string.IsNullOrEmpty(x))//belangerijk dit verwijdert lege items
+                .Select(x=> new SelectValue(x) )
                 .ToArray()
                 );
 
@@ -42,7 +43,11 @@ namespace GUICBSData.MainScreen
                 this.LimitTo.Text = "10000";
                 this.trackBar1.Maximum = 10000;
             }
+        }
 
+        private SelectValue deleteNumber(string x)
+        {
+            return new SelectValue(x);
         }
 
         private void GetData_Click(object sender, EventArgs e)
@@ -76,18 +81,18 @@ namespace GUICBSData.MainScreen
             if (argument.select.CheckedItems.Count > 0)
             {
 
-                foreach (string val in argument.select.CheckedItems)
+                foreach (var val in argument.select.CheckedItems)
                 {
-                    select.Add(val);
+                    select.Add(val.Origenal);
                 }
 
                 
             }
             else
             {
-                foreach (string val in argument.select.Items)
+                foreach (var val in argument.select.Items)
                 {
-                    select.Add(val);
+                    select.Add(val.Origenal);
                 }
             }
 
