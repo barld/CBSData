@@ -102,16 +102,24 @@ namespace GUICBSData.MainScreen
 
             //start Excelapplicatie
             WorkbookCreator.Workbook wb = new WorkbookCreator.Workbook();
-            var sheet = wb.GetSheet("getallen", maneger.TableData.HeaderData, maneger.TableData.RowData);
-            var infoSheet = wb.GetSheet(
-                "info", 
-                new List<string> {"dscription" }, new List<List<object>> { new List<object> { maneger.GetInfo() } });
 
-            int i = 0;
-            foreach(TableData tab in maneger.GetExtraData(criteria))
+            try
             {
-                wb.GetSheet(criteria.Select[i], tab.HeaderData, tab.RowData);
-                i++;
+                var infoSheet = wb.GetSheet(
+                    "info",
+                    new List<string> { "dscription" }, new List<List<object>> { new List<object> { maneger.GetInfo() } });
+                var sheet = wb.GetSheet("getallen", maneger.TableData.HeaderData, maneger.TableData.RowData);
+
+                int i = 0;
+                foreach (TableData tab in maneger.GetExtraData(criteria))
+                {
+                    wb.GetSheet(criteria.Select[i], tab.HeaderData, tab.RowData);
+                    i++;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("er is iets misgegaan tijdens het ophalen van de data");
             }
 
             wb.Vissable = true;

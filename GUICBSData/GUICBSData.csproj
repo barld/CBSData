@@ -124,8 +124,11 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home_SelectTabelButton_Click.sequencediagram.layout">
+    <EmbeddedResource Include="sequince diagrammen\Home_SelectTabelButton_Click.sequencediagram.layout">
       <DependentUpon>Home_SelectTabelButton_Click.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sequince diagrammen\Home_SynchronsizeButton_Click.sequencediagram.layout">
+      <DependentUpon>Home_SynchronsizeButton_Click.sequencediagram</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainScreen\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -152,8 +155,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="sequince diagrammen\SelectTabelInformation_DataTransfer_DoWork.sequencediagram.layout">
+      <DependentUpon>SelectTabelInformation_DataTransfer_DoWork.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sequince diagrammen\SelectTabelInformation_GetData_Click.sequencediagram.layout">
+      <DependentUpon>SelectTabelInformation_GetData_Click.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sequince diagrammen\SelectTabel_InfoButton_Click.sequencediagram.layout">
+      <DependentUpon>SelectTabel_InfoButton_Click.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sequince diagrammen\SelectTabel_SearchTabel_TextChanged.sequencediagram.layout">
+      <DependentUpon>SelectTabel_SearchTabel_TextChanged.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sequince diagrammen\SelectTabel_TabelsList_SelectedIndexChanged.sequencediagram.layout">
+      <DependentUpon>SelectTabel_TabelsList_SelectedIndexChanged.sequencediagram</DependentUpon>
+    </EmbeddedResource>
     <None Include="GUICBSData_TemporaryKey.pfx" />
-    <None Include="Home_SelectTabelButton_Click.sequencediagram" />
+    <None Include="sequince diagrammen\Home_SelectTabelButton_Click.sequencediagram" />
+    <None Include="sequince diagrammen\Home_SynchronsizeButton_Click.sequencediagram" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,6 +182,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sequince diagrammen\SelectTabelInformation_DataTransfer_DoWork.sequencediagram" />
+    <None Include="sequince diagrammen\SelectTabelInformation_GetData_Click.sequencediagram" />
+    <None Include="sequince diagrammen\SelectTabel_InfoButton_Click.sequencediagram" />
+    <None Include="sequince diagrammen\SelectTabel_SearchTabel_TextChanged.sequencediagram" />
+    <None Include="sequince diagrammen\SelectTabel_TabelsList_SelectedIndexChanged.sequencediagram" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
