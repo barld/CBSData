@@ -63,6 +63,26 @@ namespace GUICBSData.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ajax_loader_gray_256 {
+            get {
+                object obj = ResourceManager.GetObject("ajax_loader_gray_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Back {
+            get {
+                object obj = ResourceManager.GetObject("Back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap waiting_animation_512x512_by_clopen_d39yzl8 {
             get {
                 object obj = ResourceManager.GetObject("waiting_animation_512x512_by_clopen-d39yzl8", resourceCulture);

@@ -45,7 +45,10 @@ namespace CBSData
             }
         }
 
-        //ggeft de datum van het nieuwste item in de database weer
+        /// <summary>
+        /// geeft de datum van het nieuwste item in de database weer
+        /// </summary>
+        /// <returns></returns>
         public DateTime LastUpdated()
         {
             localDBDataSetTableAdapters.TableTableAdapter tb = new localDBDataSetTableAdapters.TableTableAdapter();
@@ -243,10 +246,10 @@ WHERE
         public LocalCatalogTheme[] GetThemsWhere(string searchTheme)
         {
             string sql = @"
-select * from [Theme]
-WHERE 
-	[Theme].Title LIKE @searchTheme
-";
+                            select * from [Theme]
+                            WHERE 
+	                            [Theme].Title LIKE @searchTheme
+                            ";
             Dictionary<string, string> vars = new Dictionary<string, string>();
             vars.Add("@searchTheme", "%"+searchTheme+"%");
 

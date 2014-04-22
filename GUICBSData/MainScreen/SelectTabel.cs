@@ -50,7 +50,17 @@ namespace GUICBSData.MainScreen
         /// <param name="e"></param>
         private void SearchTabel_TextChanged(object sender, EventArgs e)
         {
-            var newTables = Globals.LocalCatalog.GetTablesWhere(this.SearchTabel.Text, this.SearchTheme.Text);
+            LocalCatalogTable[] newTables;
+            //als er een thema geselcteerd is moet die worden gebruikt
+            if(this.ThemesList.SelectedItem==null)
+            {
+                newTables = Globals.LocalCatalog.GetTablesWhere(this.SearchTabel.Text, this.SearchTheme.Text);
+            }
+            else
+            {
+                var theme = (LocalCatalogTheme)(this.ThemesList.SelectedItem);
+                newTables = Globals.LocalCatalog.GetTablesWhere(this.SearchTabel.Text, theme.Title);
+            }
 
             //resultaat is binnen verwijder oude items!
             this.TabelsList.Items.Clear();
@@ -83,11 +93,7 @@ namespace GUICBSData.MainScreen
              if (t != null)
              {
                  Globals.MainWindow.SetInfoWait(new SelectTableInformationWait(t));
-             }        }
-
-        private void ThemesList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+             }        
         }
     }
 }

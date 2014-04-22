@@ -56,10 +56,9 @@
             this.ThemesList.FormattingEnabled = true;
             this.ThemesList.Location = new System.Drawing.Point(56, 116);
             this.ThemesList.Name = "ThemesList";
-            this.ThemesList.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.ThemesList.Size = new System.Drawing.Size(188, 238);
             this.ThemesList.TabIndex = 1;
-            this.ThemesList.SelectedIndexChanged += new System.EventHandler(this.ThemesList_SelectedIndexChanged);
+            this.ThemesList.SelectedIndexChanged += new System.EventHandler(this.SearchTabel_TextChanged);
             // 
             // Info
             // 
@@ -79,7 +78,6 @@
             this.Summary.Name = "Summary";
             this.Summary.Size = new System.Drawing.Size(400, 13);
             this.Summary.TabIndex = 1;
-            this.Summary.Text = "Summary";
             // 
             // Title
             // 
@@ -91,7 +89,6 @@
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(400, 24);
             this.Title.TabIndex = 0;
-            this.Title.Text = "Title";
             // 
             // SearchTabel
             // 

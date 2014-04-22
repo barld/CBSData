@@ -26,6 +26,9 @@ namespace CBSData
             }
         }
     
+        /// <summary>
+        /// 
+        /// </summary>
         public SqlConnection Connection
         {
             get
@@ -34,6 +37,12 @@ namespace CBSData
             }
         }
 
+        /// <summary>
+        /// voor het maken van een simpele selecties
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="vars"></param>
+        /// <returns></returns>
         public List<Dictionary<string, object>> Select(string query, Dictionary<string, string> vars)
         {
             SqlCommand cmd = this._connection.CreateCommand();

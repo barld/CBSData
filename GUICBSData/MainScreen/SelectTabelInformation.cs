@@ -98,7 +98,9 @@ namespace GUICBSData.MainScreen
             //start Excelapplicatie
             WorkbookCreator.Workbook wb = new WorkbookCreator.Workbook();
             var sheet = wb.GetSheet("getallen", maneger.TableData.HeaderData, maneger.TableData.RowData);
-            var infoSheet = wb.GetSheet("info", new List<string> {"dscription" }, new List<List<object>> { new List<object> { maneger.GetInfo() } });
+            var infoSheet = wb.GetSheet(
+                "info", 
+                new List<string> {"dscription" }, new List<List<object>> { new List<object> { maneger.GetInfo() } });
 
             int i = 0;
             foreach(TableData tab in maneger.GetExtraData(criteria))
@@ -108,6 +110,11 @@ namespace GUICBSData.MainScreen
             }
 
             wb.Vissable = true;
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            Globals.MainWindow.ShowSelectTabel();
         }        
     }
 }

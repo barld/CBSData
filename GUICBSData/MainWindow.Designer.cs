@@ -39,11 +39,11 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -150,34 +150,14 @@
             this.splitContainer1.SplitterDistance = 497;
             this.splitContainer1.TabIndex = 2;
             // 
-            // linkLabel1
+            // label3
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(598, 68);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(28, 13);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "CBS";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(276, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Alle data die in deze appkicatie aanwezig is is akomstig van het";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(633, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "en valt onder de ";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(824, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "licentie";
             // 
             // linkLabel2
             // 
@@ -190,14 +170,34 @@
             this.linkLabel2.Text = "creativecommons";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(824, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "licentie";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(633, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "en valt onder de ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(276, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(305, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Alle data die in deze applicatie aanwezig is is afkomstig van het";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(598, 68);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(28, 13);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "CBS";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // MainWindow
             // 

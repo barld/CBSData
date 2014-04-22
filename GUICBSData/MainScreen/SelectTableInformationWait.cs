@@ -21,6 +21,15 @@ namespace GUICBSData.MainScreen
             InitializeComponent();
             this._table = t;
             this.backgroundWorker1.RunWorkerAsync(t);
+
+            this.DockChanged += SelectTableInformationWait_DockChanged;
+            
+        }
+
+        void SelectTableInformationWait_DockChanged(object sender, EventArgs e)
+        {
+            pictureBox1.Left = (this.Width - pictureBox1.Width) / 2;             //VEEEEEEEEL BETER
+            pictureBox1.Top = (this.Height - pictureBox1.Height) / 2;
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

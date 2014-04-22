@@ -37,6 +37,7 @@
             this.limit = new System.Windows.Forms.Label();
             this.DataTransfer = new System.ComponentModel.BackgroundWorker();
             this.label2 = new System.Windows.Forms.Label();
+            this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             // 
             this.CatogoriesList.CheckOnClick = true;
             this.CatogoriesList.FormattingEnabled = true;
-            this.CatogoriesList.Location = new System.Drawing.Point(76, 81);
+            this.CatogoriesList.Location = new System.Drawing.Point(79, 108);
             this.CatogoriesList.Name = "CatogoriesList";
             this.CatogoriesList.Size = new System.Drawing.Size(220, 169);
             this.CatogoriesList.TabIndex = 0;
@@ -52,7 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 41);
+            this.label1.Location = new System.Drawing.Point(76, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 13);
             this.label1.TabIndex = 1;
@@ -116,10 +117,21 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Aantal rijen";
             // 
+            // back
+            // 
+            this.back.Image = global::GUICBSData.Properties.Resources.Back;
+            this.back.Location = new System.Drawing.Point(23, 13);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(50, 51);
+            this.back.TabIndex = 15;
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
             // SelectTabelInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.back);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.limit);
             this.Controls.Add(this.LimitTo);
@@ -147,5 +159,6 @@
         private System.Windows.Forms.Label limit;
         private System.ComponentModel.BackgroundWorker DataTransfer;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button back;
     }
 }
