@@ -30,13 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.synchroniseerCatalogesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectTabelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButtonHelp = new System.Windows.Forms.ToolStripDropDownButton();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.synchroniseerCatalogesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectTabelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButtonHelp = new System.Windows.Forms.ToolStripDropDownButton();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -58,9 +58,84 @@
             this.toolStripDropDownButtonHelp});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(980, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1006, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 665);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1006, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.label3);
+            this.splitContainer1.Panel2.Controls.Add(this.linkLabel2);
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.linkLabel1);
+            this.splitContainer1.Size = new System.Drawing.Size(1006, 640);
+            this.splitContainer1.SplitterDistance = 530;
+            this.splitContainer1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(824, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "licentie";
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(727, 68);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(90, 13);
+            this.linkLabel2.TabIndex = 3;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "creativecommons";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(633, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "en valt onder de ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(276, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(305, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Alle data die in deze applicatie aanwezig is is afkomstig van het";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(598, 68);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(28, 13);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "CBS";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // toolStripDropDownButton1
             // 
@@ -124,90 +199,17 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 625);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(980, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.linkLabel2);
-            this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.linkLabel1);
-            this.splitContainer1.Size = new System.Drawing.Size(980, 600);
-            this.splitContainer1.SplitterDistance = 497;
-            this.splitContainer1.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(824, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "licentie";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(727, 68);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(90, 13);
-            this.linkLabel2.TabIndex = 3;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "creativecommons";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(633, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "en valt onder de ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(276, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(305, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Alle data die in deze applicatie aanwezig is is afkomstig van het";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(598, 68);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(28, 13);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "CBS";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 647);
+            this.ClientSize = new System.Drawing.Size(1006, 687);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1022, 725);
+            this.MinimumSize = new System.Drawing.Size(1022, 725);
             this.Name = "MainWindow";
             this.Text = "CBS Data";
             this.toolStrip1.ResumeLayout(false);
