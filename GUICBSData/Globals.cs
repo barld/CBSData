@@ -19,6 +19,7 @@ namespace GUICBSData
 
         //vieze hack omdat ik even een invoke method nodig heb
         public static MainWindow MainWindow = new MainWindow();
+        public static event EventHandler DataBaseUpdated;
         #endregion
 
         #region public properties
@@ -68,15 +69,29 @@ namespace GUICBSData
                 //hier mag je weer alles in de main thread doen
                 //MainWindow.Text = "test";
                 //Log.AddLog(LogType.info, "database is weer bij de tijd");
+
+                if(DataBaseUpdated!=null)
+                {
+                    DataBaseUpdated(null, null);
+                }
             }
         }
 
         private static void _handelSynchroniseren(object obj)
         {
-            Globals._localCatalog.SynchronizeDatabase();
+            try
+            {
+                Globals._localCatalog.SynchronizeDatabase();
 
-            //database is weer synchroon ggef een melding terug aan de gebruiker dat hij klaar is
-            System.Windows.Forms.MessageBox.Show("de database is weer synchroon");
+                //database is weer synchroon ggef een melding terug aan de gebruiker dat hij klaar is
+                System.Windows.Forms.MessageBox.Show("de database is weer synchroon");
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("verbinding leggen met het CBS is mislukt");
+            }
+
+           
 
             report();
         }

@@ -20,6 +20,9 @@ namespace GUICBSData.MainScreen
             this.SearchTheme.TextChanged += new System.EventHandler(this.SearchTheme_TextChanged);
 
             InitialLists();
+
+            Globals.DataBaseUpdated += this.SearchTabel_TextChanged;
+            Globals.DataBaseUpdated += this.SearchTheme_TextChanged;
         }
 
         private void InitialLists()
